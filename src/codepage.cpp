@@ -1,6 +1,6 @@
 #include "codepage.h"
 
-std::string CodePage::s_codepage;
+std::string CodePage::s_codepage = "ASCII";
 
 void CodePage::setCodePage(const char * codepage)
 {

@@ -4,6 +4,7 @@ solution ( "emoji-text" )
 
   if _ACTION == "clean" then
     os.rmdir(".vs")
+    os.rmdir("bin")
     os.rmdir("temp")
     os.remove("emoji-text.VC.db")
     os.remove("emoji-text.sln")
