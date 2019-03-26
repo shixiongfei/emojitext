@@ -1,0 +1,4 @@
+[submodule "3rd/utf8"]
+	path = 3rd/utf8
+	url = git@github.com:shixiongfei/utf8.git
+	branch = master
