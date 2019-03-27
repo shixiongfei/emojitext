@@ -6,9 +6,10 @@
 
 // https://unicode.org/emoji/charts/full-emoji-list.html
 
-typedef enum Emotion {
+typedef enum EmojiType {
     EMOTION_NONE,
 
+    // Smileys & Emotion
     FACE_SMILING,
     FACE_AFFECTION,
     FACE_TONGUE,
@@ -21,13 +22,36 @@ typedef enum Emotion {
     FACE_CONCERNED,
     FACE_NEGATIVE,
     FACE_COSTUME,
+    CAT_FACE,
+    MONKEY_FACE,
+    EMOTION,
+
+    // People & Body
+
+    // Component
+
+    // Animals & Nature
+
+    // Food & Drink
+
+    // Travel & Places
+
+    // Activities
+
+    // Objects
+
+    // Symbols
+
+    // Flags
+
+    // 
 
     EMOTION_MAX
-} Emotion;
+} EmojiType;
 
 typedef struct EmojiData {
     std::string name;
-    Emotion emotion;
+    EmojiType emotion;
 } EmojiData;
 
 class Emoji {
