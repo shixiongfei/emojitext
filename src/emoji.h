@@ -1,3 +1,14 @@
+/*
+ * emoji.h
+ *
+ * copyright (c) 2019-2021 Xiongfei Shi
+ *
+ * author: Xiongfei Shi <xiongfei.shi(a)icloud.com>
+ * license: Apache-2.0
+ *
+ * https://github.com/shixiongfei/emojitext
+ */
+
 #pragma once
 
 #include "varchar.h"
@@ -7,66 +18,66 @@
 // https://unicode.org/emoji/charts/full-emoji-list.html
 
 typedef enum EmojiType {
-    EMOTION_NONE,
+  EMOTION_NONE,
 
-    // Smileys & Emotion
-    FACE_SMILING,
-    FACE_AFFECTION,
-    FACE_TONGUE,
-    FACE_HAND,
-    FACE_NEUTRAL_SKEPTICAL,
-    FACE_SLEEPY,
-    FACE_UNWELL,
-    FACE_HAT,
-    FACE_GLASSES,
-    FACE_CONCERNED,
-    FACE_NEGATIVE,
-    FACE_COSTUME,
-    CAT_FACE,
-    MONKEY_FACE,
-    EMOTION,
+  // Smileys & Emotion
+  FACE_SMILING,
+  FACE_AFFECTION,
+  FACE_TONGUE,
+  FACE_HAND,
+  FACE_NEUTRAL_SKEPTICAL,
+  FACE_SLEEPY,
+  FACE_UNWELL,
+  FACE_HAT,
+  FACE_GLASSES,
+  FACE_CONCERNED,
+  FACE_NEGATIVE,
+  FACE_COSTUME,
+  CAT_FACE,
+  MONKEY_FACE,
+  EMOTION,
 
-    // People & Body
+  // People & Body
 
-    // Component
+  // Component
 
-    // Animals & Nature
+  // Animals & Nature
 
-    // Food & Drink
+  // Food & Drink
 
-    // Travel & Places
+  // Travel & Places
 
-    // Activities
+  // Activities
 
-    // Objects
+  // Objects
 
-    // Symbols
+  // Symbols
 
-    // Flags
+  // Flags
 
-    // 
+  //
 
-    EMOTION_MAX
+  EMOTION_MAX
 } EmojiType;
 
 typedef struct EmojiData {
-    std::string name;
-    EmojiType emotion;
+  std::string name;
+  EmojiType emotion;
 } EmojiData;
 
 class Emoji {
 public:
-    Emoji(VarChar ch);
-    virtual ~Emoji(void);
+  Emoji(VarChar ch);
+  virtual ~Emoji(void);
 
-    const EmojiData & data(void) const;
+  const EmojiData &data(void) const;
 
 public:
-    static bool isEmoji(const VarChar &ch);
+  static bool isEmoji(const VarChar &ch);
 
 private:
-    VarChar m_varchar;
+  VarChar m_varchar;
 
 private:
-    static std::map<ucs4_t, EmojiData> s_emojiList;
+  static std::map<ucs4_t, EmojiData> s_emojiList;
 };
